@@ -24,8 +24,7 @@ public class CustomerBORefactoredTest {
 	private CustomerBO customerBO = new CustomerBOImpl();
 
 	@Test
-	public void testCustomerProductSum_TwoProductsSameCurrencies()
-			throws DifferentCurrenciesException {
+	public void testCustomerProductSum_TwoProductsSameCurrencies() throws DifferentCurrenciesException {
 
 		Amount[] amounts = {
 				new AmountImpl(new BigDecimal("5.0"), Currency.EURO), 
