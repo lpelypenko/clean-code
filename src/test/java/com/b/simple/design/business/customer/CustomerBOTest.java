@@ -37,7 +37,7 @@ public class CustomerBOTest {
     }
 
     @Test
-    public void customerProductSumOfTwoDifferentCurrencies(){
+    public void customerProductSumOfTwoDifferentCurrenciesThrowsException(){
         List<AmountImpl> amounts = new ArrayList<AmountImpl>() {{
             add(new AmountImpl(new BigDecimal("5.0"), Currency.INDIAN_RUPEE));
             add(new AmountImpl(new BigDecimal("6.0"), Currency.EURO));
