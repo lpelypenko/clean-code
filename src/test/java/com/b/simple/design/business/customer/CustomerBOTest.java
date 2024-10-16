@@ -20,7 +20,7 @@ import com.b.simple.design.model.customer.ProductType;
 
 public class CustomerBOTest {
 
-    private CustomerBO customerBO = new CustomerBOImpl();
+    private final CustomerBO customerBOImpl = new CustomerBOImpl();
 
     @Test
     public void customerProductSumTwoProductsSameCurrencies() throws DifferentCurrenciesException {
@@ -30,7 +30,7 @@ public class CustomerBOTest {
         }};
         List<Product> products = getProductsWithAmounts(amounts);
 
-        Amount actual = customerBO.getCustomerProductsSum(products);
+        Amount actual = customerBOImpl.getCustomerProductsSum(products);
         Amount expected = new AmountImpl(new BigDecimal("11.0"), Currency.EURO);
 
         assertCurrency(expected, actual);
@@ -46,13 +46,13 @@ public class CustomerBOTest {
         List<Product> products = getProductsWithAmounts(amounts);
 
         Assertions.assertThrows(DifferentCurrenciesException.class, () ->
-                customerBO.getCustomerProductsSum(products));
+                customerBOImpl.getCustomerProductsSum(products));
     }
 
     @Test
     public void customerProductSumEmptyProduct() throws DifferentCurrenciesException {
         Amount expected = new AmountImpl(BigDecimal.ZERO, Currency.EURO);
-        Amount actual = customerBO.getCustomerProductsSum( new ArrayList<>());
+        Amount actual = customerBOImpl.getCustomerProductsSum( new ArrayList<>());
 
         assertCurrency(expected, actual);
     }

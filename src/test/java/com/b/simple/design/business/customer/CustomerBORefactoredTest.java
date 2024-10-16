@@ -78,17 +78,6 @@ public class CustomerBORefactoredTest {
 					new ProductImpl(100, "Product 15", ProductType.BANK_GUARANTEE,
 							amount))
 				.collect(Collectors.toList());
-		
-//		List<Product> products = new ArrayList<Product>();
-//		
-//		for(Amount amount:amounts) {
-//			products.add(
-//					new ProductImpl(100, "Product 15", ProductType.BANK_GUARANTEE,
-//							amount));
-//			
-//		}
-//
-//		return products;
 	}
 
 }

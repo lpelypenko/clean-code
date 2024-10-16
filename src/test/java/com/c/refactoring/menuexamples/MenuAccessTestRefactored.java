@@ -1,6 +1,7 @@
 package com.c.refactoring.menuexamples;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -54,12 +55,12 @@ public class MenuAccessTestRefactored {
 
 	private void assertMenuItemIsWritable(MenuItem actual) {
 		assertEquals(Constants.WRITE, actual.getAccess());
-		assertEquals(true, actual.isVisible());
+        assertTrue(actual.isVisible());
 	}
 
 	private void assertMenuItemIsReadable(MenuItem actual) {
 		assertEquals(Constants.READ, actual.getAccess());
-		assertEquals(true, actual.isVisible());
+        assertTrue(actual.isVisible());
 	}
 
 }
